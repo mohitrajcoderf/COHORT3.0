@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM-manupulation</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <!-- <script src="script.js"></script> -->
-</head>
-<body>
-   <h1>To Do List</h1>
-    <ol>
-        <li>Buy Groceries</li>
-        <li>Finish Project</li>
-        <li>Submit Report</li>
-        <li>Go for a run</li>
-    </ol>
+<html>
+    <body id="body">
+        <h1>Todo list</h1>
+        <h1>todo list 2</h1>
+        <h1>todo list 3</h1>
 
-    <input type="text" placeholder="Task Name">
-    <button onclick="addTask()">Add Task</button>
-
+        <button onclick="DeleteRandomElement()">delete element!</button>
+    </body>
     <script>
-        function addTask(){
-       const inputElement = document.querySelector('input');
-       const value = inputElement.value;
-       console.log(value);
-       }
+        function DeleteRandomElement() {
+            const element = document.querySelector("h1");
+            const parentElement = element.parentNode;
+            parentElement.removeChild(element);
+        }
     </script>
-</body>
 </html>
