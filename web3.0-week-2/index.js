@@ -5,7 +5,7 @@
     }
     return hexString;
  };
- const str = "hello";
+ const str = "hello mohit";
  const bytes = new TextEncoder().encode(str);
  const bytesArray = new Uint8Array([104,101,108,108,111]);
   const hexString = arrayToHex(bytesArray);
