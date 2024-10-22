@@ -1,35 +1,41 @@
-const express = require("express");
+const express = require ("express");
 
 const app = express();
 
-app.get("/sum/:a/:b", function(req, res){
+app.get("/sum" , function(req , res){
+    const a = parseInt(req.query.a);
+    const b = parseInt(req.query.b);
+
+    res.json({
+        ans: a+b
+    })
+});
+
+app.get("/multiply" , function(req , res){
     const a = req.query.a;
     const b = req.query.b;
 
-    res.json({sum:a + b})
-
+    res.json({
+        ans: a*b
+    })
 });
 
-app.get("/multiply", function(req ,res){
+app.get("/divide" , function(req , res){
     const a = req.query.a;
     const b = req.query.b;
 
-    res.json({multiply:a * b})
-
+    res.json({
+        ans: a/b
+    })
 });
 
-app.get("/subtract", function(req,res){
-    const a = req.query.a;
-    const b = req.query.b;
+app.get("/subtract" , function(req , res){
+    const a = parseInt(req.query.a);
+    const b = parseInt(req.query.b);
 
-    res.json({subtract:a - b})
+    res.json({
+        ans: a-b
+    })
 });
 
-app.get("/divide", function(erq, res){
-    const a = req.query.a;
-    const b = req.query.b;
-
-    res.json({divide:a / b})
-});
-
-app.listen(3000);
+app.listen(3000)
